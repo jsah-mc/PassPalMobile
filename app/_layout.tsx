@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import { Stack, useRouter, useSegments } from "expo-router";
-import { AuthProvider, useAuth } from "@/context/AuthContext";
 import { SplashScreenController } from "@/components/SplashScreenController";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { AuthProvider, useAuth } from "@/context/AuthContext";
+import { Stack, useRouter, useSegments } from "expo-router";
+import { useEffect } from "react";
 
 function RootLayoutNav() {
   const { user, isLoading } = useAuth();
@@ -31,9 +30,7 @@ function RootLayoutNav() {
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <SafeAreaView style={{ flex: 1 }}>
         <RootLayoutNav />
-      </SafeAreaView>
     </AuthProvider>
   );
 }

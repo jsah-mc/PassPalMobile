@@ -1,18 +1,17 @@
+import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
-  SafeAreaView,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
-import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons";
-import { useLocalSearchParams, useRouter } from "expo-router";
 
-import Input from "@/components/vault/Input";
-import GoogleSignInButton from "@/components/social-auth-buttons/GoogleSignInButton";
 import GitHubSignInButton from "@/components/social-auth-buttons/GitHubSignInButton";
+import GoogleSignInButton from "@/components/social-auth-buttons/GoogleSignInButton";
+import Input from "@/components/vault/Input";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginScreen() {
@@ -99,7 +98,7 @@ export default function LoginScreen() {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-[#11111b]">
+    <View className="bg-[#11111b] items-center flex-1">
       <View className="flex-1 justify-center px-5">
         <View className="mb-10 items-center">
           <View className="mb-5 h-20 w-20 items-center justify-center rounded-[28px] bg-[#313244]">
@@ -176,7 +175,7 @@ export default function LoginScreen() {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
